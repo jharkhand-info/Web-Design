@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>CRUD systems</title>
+    <style>
+        *{box-sizing: border-box}
+        body{background: #0e5b81}
+        h1{text-align: center;color:#FFF;}
+        .myform{height:48px;display: flex;margin:15px;}
+        .mylogo{width:48px;font-size:24px;display: flex;flex-direction:column;justify-content: center;text-align: center;color:#FFF;}
+        .myinput{width:calc(100% - 50px);position: relative;}
+        .mylabel{position: absolute;left: 0;right: 0;top: 0;bottom: 0;font-size:14px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;transition:all 0.3s;color:#edff47}
+        .mytext{position: absolute;left: 0;bottom: 0;right:4px}
+        .txt_input{width: 100%;height:25px;outline: none;border: none;border-bottom: 1px solid #aaa;background: transparent;font-size: 16px;}
+        .txt_trans{font-size:16px;padding-top:22px;color:#999}
+    </style>
+</head>
+<body>
+    <h1>Sign Up Form</h1>
+
+    <div class="container">
+        <div class="myform">
+            <div class="mylogo">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="myinput">
+                <div class="mylabel txt_trans"></div>
+                <div class="mytext"><input type="text" placeholder="User Name" class="txt_input"></div>
+            </div>
+        </div>
+        <div class="myform">
+            <div class="mylogo">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="myinput">
+                <div class="mylabel txt_trans"></div>
+                <div class="mytext"><input type="email" placeholder="Email" class="txt_input"></div>
+            </div>
+        </div>
+        <div class="myform">
+            <div class="mylogo">
+                <i class="fas fa-key"></i>
+            </div>
+            <div class="myinput">
+                <div class="mylabel txt_trans"></div>
+                <div class="mytext"><input type="password" placeholder="Password" class="txt_input"></div>
+            </div>
+        </div>
+        <div class="myform">
+            <div class="mylogo">
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="myinput">
+                <div class="mylabel txt_trans"></div>
+                <div class="mytext"><input type="password" placeholder="Confirm Password" class="txt_input"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var _ = function($){return document.querySelectorAll($)};
+        const elem = _(".txt_input");
+        window.onload = function(){
+            addph();
+        }
+        var addph = function(){
+            for(var i=0;i<elem.length;i++){
+                elem[i].parentNode.parentNode.getElementsByClassName("mylabel")[0].innerHTML = elem[i].getAttribute("placeholder");
+                elem[i].setAttribute("placeholder", "");
+            }
+        }
+        for(var i=0;i<elem.length;i++){
+            elem[i].onfocus = function(){
+                this.parentNode.parentNode.getElementsByClassName("mylabel")[0].classList.remove("txt_trans"); 
+            }
+            elem[i].onblur = function(){
+                if(this.value === ""){
+                    this.parentNode.parentNode.getElementsByClassName("mylabel")[0].classList.add("txt_trans"); 
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
