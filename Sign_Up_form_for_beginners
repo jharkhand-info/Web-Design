@@ -8,15 +8,15 @@
     <title>CRUD systems</title>
     <style>
         *{box-sizing: border-box}
-        body{background: #0e5b81}
+        body{background: #244e63}/*Change the color of body*/
         h1{text-align: center;color:#FFF;}
         .myform{height:48px;display: flex;margin:15px;}
-        .mylogo{width:48px;font-size:24px;display: flex;flex-direction:column;justify-content: center;text-align: center;color:#FFF;}
+        .mylogo{width:48px;font-size:24px;display: flex;flex-direction:column;justify-content: center;text-align: center;color:#FFF;}/*--Change the color of logo--*/
         .myinput{width:calc(100% - 50px);position: relative;}
-        .mylabel{position: absolute;left: 0;right: 0;top: 0;bottom: 0;font-size:14px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;transition:all 0.3s;color:#edff47}
+        .mylabel{position: absolute;left: 0;right: 0;top: 0;bottom: 0;font-size:14px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;transition:all 0.3s;color:#edff47} /*--Change the color and transition of label --*/
         .mytext{position: absolute;left: 0;bottom: 0;right:4px}
         .txt_input{width: 100%;height:25px;outline: none;border: none;border-bottom: 1px solid #aaa;background: transparent;font-size: 16px;}
-        .txt_trans{font-size:16px;padding-top:22px;color:#999}
+        .txt_trans{font-size:16px;padding-top:22px;color:#999} /*--Change the landing color after transition of label --*/
     </style>
 </head>
 <body>
